@@ -12,7 +12,7 @@ public class DoublingTest {
             a[i] = StdRandom.uniformInt(-MAX, MAX);
         }
         Stopwatch timer = new Stopwatch();
-        ThreeSumLocal.count(a);
+        ThreeSumBruteForce.count(a);
         return timer.elapsedTime();
     }
 

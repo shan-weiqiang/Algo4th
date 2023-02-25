@@ -1,7 +1,7 @@
 
 import edu.princeton.cs.algs4.In;
 
-public class ThreeSumLocal {
+public class ThreeSumBruteForce {
     public static int count(int[] a) {
         int len = a.length;
         int cnt = 0;
