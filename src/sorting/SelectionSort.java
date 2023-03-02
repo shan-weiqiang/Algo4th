@@ -1,13 +1,14 @@
 package sorting;
 
 import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdOut;
 
-public class SelectionSort extends SortBase {
-    public static void sort(Comparable[] a) {
+public class SelectionSort<T extends Comparable<T>> extends SortBase<T> {
+    public void sort(T[] a) {
         for (int i = 0; i < a.length; i++) {
             int tmp = i;
             for (int j = i + 1; j < a.length; j++) {
-                if (less(a[j], a[i]))
+                if (less(a[j], a[tmp]))
                     tmp = j;
             }
             exch(a, i, tmp);
@@ -21,8 +22,9 @@ public class SelectionSort extends SortBase {
         for (int i = 0; i < s.length; i++) {
             a[i] = Integer.parseInt(s[i]);
         }
-        sort(a);
-        assert isSorted(a);
-        show(a);
+        SelectionSort<Integer> sort = new SelectionSort<Integer>();
+        sort.sort(a);
+        assert sort.isSorted(a);
+        sort.show(a);
     }
 }
