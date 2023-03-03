@@ -11,7 +11,8 @@ public class SelectionSort<T extends Comparable<T>> extends SortBase<T> {
                 if (less(a[j], a[tmp]))
                     tmp = j;
             }
-            exch(a, i, tmp);
+            if (i != tmp)
+                exch(a, i, tmp);
         }
 
     }
