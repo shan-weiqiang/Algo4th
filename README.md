@@ -5,6 +5,8 @@
   - [ThreeSum 三数之和](#threesum-三数之和)
     - [Brute force 蛮力查找](#brute-force-蛮力查找)
     - [With help of binary search](#with-help-of-binary-search)
+  - [Sorting 排序](#sorting-排序)
+    - [Selection sort 选择排序](#selection-sort-选择排序)
 
 
 
@@ -60,4 +62,18 @@ $$T(N)\approx\frac{N^3}{2}$$
 通过最后一层循环使用二分查找代替，从而减少一介增长，因为二分查找的增长介数为$\log_{2}^{N}+1$, 所以对于三数之和，总的时间复杂度：
 $$T(N)=N^2*(\log_{2}^{N}+1)\approx N^2\log^{N}_2$$
 相比蛮力查找，少了一阶次的增长
+
+## Sorting 排序
+
+### Selection sort 选择排序
+
+[source code](src/sorting/SelectionSort.java)
+
+对于长度为$N$的数组，选择排序的交换次数为$N$次
+比较次数计算方法，对于第$k$个元素，需要比较$N-k-1$：
+$$C(N)=N-1+N-2+N-3+...+1+0=\frac{N(N-1)}{2}\approx\frac{1}{2}N^2$$
+
+选择排序的特点如下：
+- 选择排序的增长级是二次方级，不适用于$N$特别大的情形
+- 稳定，选择排序总是交换$N$次，比较$\frac{1}{2}N^2$次
 

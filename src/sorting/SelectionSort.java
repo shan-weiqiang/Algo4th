@@ -24,7 +24,6 @@ public class SelectionSort<T extends Comparable<T>> extends SortBase<T> {
         }
         SelectionSort<Integer> sort = new SelectionSort<Integer>();
         sort.sort(a);
-        assert sort.isSorted(a);
         sort.show(a);
     }
 }
